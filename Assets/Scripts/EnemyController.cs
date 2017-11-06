@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AltraPalla : MonoBehaviour {
+public class EnemyController : MonoBehaviour {
 
 	//public permette modifiche al programmatore dall ide unity
-	public float speed = 20;
-	private float startHealthWidth = 0.6f;
-	//variabile per applicare velocità alla fisica
+	public float speed = 20; // variabile per applicare velocità alla fisica
 	private Rigidbody rb;
-
-
 
 	// Use this for initialization call one a time
 	void Start () {
-		rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 	}
 
 	// Update is called once per frame
@@ -31,22 +27,9 @@ public class AltraPalla : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
-	void OnCollisionEnter(Collision player){
-
-		if (player.gameObject.CompareTag ("Giocatore")) {
-			if (player.gameObject.GetComponent<PlayerController> ().health == 0) {
-				player.gameObject.SetActive (false);
-			} else {
-				PlayerController pl = player.gameObject.GetComponent<PlayerController> ();
-				pl.health--;
-				startHealthWidth = startHealthWidth - 0.2f;
-				pl.img.uvRect = new Rect(1f,1f,startHealthWidth,1f);
-				pl.img.SetNativeSize ();
-			}
-		}
-	}
 }
