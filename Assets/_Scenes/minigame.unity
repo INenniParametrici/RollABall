@@ -688,6 +688,10 @@ MonoBehaviour:
   speed: 15
   jumpIntensity: 5
   health: 3
+<<<<<<< HEAD
+  color: {r: 0, g: 0, b: 0, a: 0}
+=======
+>>>>>>> 69a1793fb5b060e4b5d2f7b37ff84c5bb2092acc
 --- !u!54 &658339812
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -719,7 +723,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3096fd55193af5d4eb0acea6b49ecfd8, type: 2}
+  - {fileID: 2100000, guid: ddf7f132e8baaf84cb830b4081202d55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
