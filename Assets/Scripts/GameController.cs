@@ -13,6 +13,14 @@ public class GameController : MonoBehaviour
     private Text scoreText;
     private int score = 0;
 
+<<<<<<< HEAD
+	//serve per cambiare colore al player
+	public int getScore(){
+		return this.score;
+	}
+
+=======
+>>>>>>> 69a1793fb5b060e4b5d2f7b37ff84c5bb2092acc
     void Start()
     {
         this.playerController = GameObject.FindGameObjectWithTag("Giocatore").GetComponent<PlayerController>();
