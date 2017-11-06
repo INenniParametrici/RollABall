@@ -10,15 +10,9 @@ public class PlayerController : MonoBehaviour {
 	public float jumpIntensity = 0;
     private bool isOnGround = true;
     public int health = 3;
-<<<<<<< HEAD
 	private GameController gameController; //variabile che utilizzo per verifiche incrociate coi dati di gioco 
     private Rigidbody rb; //variabile che definisce le proprietà di corpo rigido 
 	public Material color; //così e' modificabile da GUI
-=======
-    private GameController gameController;
-    private Rigidbody rb;
-
->>>>>>> 69a1793fb5b060e4b5d2f7b37ff84c5bb2092acc
 
 
 	// Use this for initialization call one a time
@@ -26,10 +20,7 @@ public class PlayerController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-<<<<<<< HEAD
 
-=======
->>>>>>> 69a1793fb5b060e4b5d2f7b37ff84c5bb2092acc
     }
 
     // Update is called once per frame
@@ -48,17 +39,13 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(movementHorizontal, 0.0f , movementVertical); //0.0f per non far fare cast al compilatore
 
         rb.AddForce(movement*speed);        //prodotto scalare movement * speed
-<<<<<<< HEAD
+
 
 		if (gameController.getScore () >= 2) {
 			//scrivere qui il colore che deve cambiare
 		}
 	}
 
-=======
-		}
-
->>>>>>> 69a1793fb5b060e4b5d2f7b37ff84c5bb2092acc
     public void OnCollisionEnter(Collision other)
     {
         //Collisione col nemico
