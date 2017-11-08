@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
 
 	//serve per cambiare colore al player
 	public int getScore(){
-		return this.score;
+		return score;
 	}
 
     void Start()

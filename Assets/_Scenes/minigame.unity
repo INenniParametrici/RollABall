@@ -740,7 +740,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 648323690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 407.5, y: 290.5, z: 0}
+  m_LocalPosition: {x: 411, y: 298.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1874958611}
@@ -803,7 +803,7 @@ MonoBehaviour:
   speed: 15
   jumpIntensity: 5
   health: 3
-  color: {fileID: 0}
+  rend: {fileID: 0}
 --- !u!54 &658339812
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -812,7 +812,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 658339809}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.8
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1943,7 +1943,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 8b34b4211fd27834489666163e1b7da8, type: 2}
+  - {fileID: 2100000, guid: 1f5912b15a8b461499f9bb79b728ca95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3345,7 +3345,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1870370909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.294281, y: 17.5, z: 0}
+  m_LocalPosition: {x: 1.2220764, y: 17.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 648323694}

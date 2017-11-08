@@ -12,14 +12,15 @@ public class PlayerController : MonoBehaviour {
     public int health = 3;
 	private GameController gameController; //variabile che utilizzo per verifiche incrociate coi dati di gioco 
     private Rigidbody rb; //variabile che definisce le proprietà di corpo rigido 
-	public Material color; //così e' modificabile da GUI
-
-
+	public Renderer rend;
 	// Use this for initialization call one a time
 	void Start ()
     {
-        rb = GetComponent<Rigidbody>();
+		rend = GetComponent<Renderer> (); //occorre recuperare il Rendered per operare sull'aspetto grafico
+		rend.material.SetColor ("_Color",Color.blue); //Si usa color perchè RGBA è compreso tra 0 e 1
+		rb = GetComponent<Rigidbody>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
 
     }
 
@@ -40,9 +41,9 @@ public class PlayerController : MonoBehaviour {
 
         rb.AddForce(movement*speed);        //prodotto scalare movement * speed
 
-
+		//cambia colore in base al numero di cubi raccolti
 		if (gameController.getScore () >= 2) {
-			//scrivere qui il colore che deve cambiare
+			rend.material.SetColor("_Color", Color.yellow);//i colori devono avere la stessa stringa come tag
 		}
 	}
 
