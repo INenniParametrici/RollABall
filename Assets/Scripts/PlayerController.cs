@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 
     //public permette modifiche al programmatore dall ide unity
     public float speed = 1; 
+	private bool isSpeedMultiplied = false; // serve per evitare un incremento costante di speed quando score > 2
 	public float jumpIntensity = 0;
     private bool isOnGround = true;
     public int health = 3;
@@ -44,6 +45,10 @@ public class PlayerController : MonoBehaviour {
 		//cambia colore in base al numero di cubi raccolti
 		if (gameController.getScore () >= 2) {
 			rend.material.SetColor("_Color", Color.yellow);//i colori devono avere la stessa stringa come tag
+			if (isSpeedMultiplied == false) {
+				this.speed = this.speed * 2;
+				isSpeedMultiplied = true;
+			}
 		}
 	}
 
