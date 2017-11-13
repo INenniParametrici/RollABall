@@ -674,6 +674,21 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114213637645251490, guid: 000df55e940a3104a8ea1d209432961b,
+        type: 2}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114213637645251490, guid: 000df55e940a3104a8ea1d209432961b,
+        type: 2}
+      propertyPath: jumpIntensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 54416429169929562, guid: 000df55e940a3104a8ea1d209432961b,
+        type: 2}
+      propertyPath: m_Mass
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 000df55e940a3104a8ea1d209432961b, type: 2}
   m_IsPrefabParent: 0
@@ -966,7 +981,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 648323690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 391, y: 298.5, z: 0}
+  m_LocalPosition: {x: 224.5, y: 298.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1874958611}
@@ -2257,7 +2272,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1870370909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6346436, y: 17.5, z: 0}
+  m_LocalPosition: {x: 5.0691223, y: 17.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 648323694}
@@ -2571,6 +2586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b29777bfec807a4f9c060dcff9e7a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  livelloScenaCorrente: 0
+  numMaxLivelliScena: 0
 --- !u!4 &1993580335 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4971984700463968, guid: af6df3b376c7edb43a24e06567fce6ae,
