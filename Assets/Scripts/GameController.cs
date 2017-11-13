@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using  UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
+	//Attributi ..
     private RawImage img;
     private float startHealthWidth = 0.6f;
     private PlayerController playerController;
     private Text endText;
     private Text scoreText;
-    private int score = 0;
+    public int score = 0;
 
+	public int livelloScenaCorrente=SceneManager.sceneCount;
+	public int numMaxLivelliScena = SceneManager.sceneCountInBuildSettings ;
 
 	//serve per cambiare colore al player
 	public int getScore(){
@@ -31,12 +34,13 @@ public class GameController : MonoBehaviour
     void Update ()
     {
         this.scoreText.text = "Score: "+this.score; // è più veloce la concatenazione o il ToString()?????
+
 	}
 
     public void incrementScore()
     {
-        this.score++;
         if (this.score == 4) this.WinGame();
+		this.score++;
     }
 
     public void LoseLife()
@@ -62,7 +66,14 @@ public class GameController : MonoBehaviour
 
     void WinGame()
     {
-        endText.text = "Hai vinto!";
-        GameObject.FindGameObjectWithTag("Giocatore").SetActive(false);
+       // endText.text = "Hai vinto!";
+       // GameObject.FindGameObjectWithTag("Giocatore").SetActive(false);
+
+		if (livelloScenaCorrente < numMaxLivelliScena)
+			SceneManager.LoadScene ("livello1");
+		else 
+			endText.text = "Hai vinto!";
     }
+
+
 }

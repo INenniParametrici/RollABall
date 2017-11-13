@@ -3623,6 +3623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b29777bfec807a4f9c060dcff9e7a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  livelloScenaCorrente: 0
+  numMaxLivelliScena: 2
 --- !u!1 &2089646957
 GameObject:
   m_ObjectHideFlags: 0

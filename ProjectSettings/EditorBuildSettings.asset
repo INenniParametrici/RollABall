@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/minigame.unity
+    path: Assets/_Scenes/_minigame.unity
     guid: 93c88349c6048024c8e88dced190c403
+  - enabled: 1
+    path: Assets/_Scenes/livello1.unity
+    guid: adf9ab5f4764d234d89fc67c07640ad8

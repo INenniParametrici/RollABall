@@ -6,17 +6,18 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     //public permette modifiche al programmatore dall ide unity
-    public float speed = 1; 
-	public float jumpIntensity = 0;
-    private bool isOnGround = true;
-    public int health = 3;
-	private GameController gameController; //variabile che utilizzo per verifiche incrociate coi dati di gioco 
-    private Rigidbody rb; //variabile che definisce le proprietà di corpo rigido 
+    public float speed = 1;					 //velocita con cui si muove il player
+	public float jumpIntensity = 0; 		//intensita salto
+    private bool isOnGround = true; 		//controllo se sta attaccato al terreno
+    public int health = 3; 					//vite giocatore
+	private GameController gameController;	//variabile che utilizzo per verifiche incrociate coi dati di gioco 
+    private Rigidbody rb; 					//variabile che definisce le proprietà di corpo rigido 
 	public Renderer rend;
+
 	// Use this for initialization call one a time
 	void Start ()
     {
-		rend = GetComponent<Renderer> (); //occorre recuperare il Rendered per operare sull'aspetto grafico
+		rend = GetComponent<Renderer> ();			  //occorre recuperare il Rendered per operare sull'aspetto grafico
 		rend.material.SetColor ("_Color",Color.blue); //Si usa color perchè RGBA è compreso tra 0 e 1
 		rb = GetComponent<Rigidbody>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-		float jump = Input.GetAxis ("Jump");
+		float jump = Input.GetAxis ("Jump"); // jump cos'è?
 
 		if (isOnGround) {
 			Vector3 jumpVector = new Vector3 (0.0f, jump, 0.0f);
