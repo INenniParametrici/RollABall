@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -13,9 +14,13 @@ public class GameController : MonoBehaviour
     private Text scoreText;
     private int score = 0;
 
+    public int livelloScenaCorrente;
+    public int numMaxLivelliScena;
 
-	//serve per cambiare colore al player
-	public int getScore(){
+
+
+    //serve per cambiare colore al player
+    public int getScore(){
 		return score;
 	}
 
@@ -25,7 +30,10 @@ public class GameController : MonoBehaviour
         this.img = GameObject.FindObjectOfType<RawImage>();
         this.endText = GameObject.Find("EndText").GetComponent<Text>();
         this.scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
-    }
+
+        livelloScenaCorrente = SceneManager.sceneCount;
+        numMaxLivelliScena = SceneManager.sceneCountInBuildSettings;
+}
 
     // Update is called once per frame
     void Update ()
@@ -62,7 +70,15 @@ public class GameController : MonoBehaviour
 
     void WinGame()
     {
-        endText.text = "Hai vinto!";
-        GameObject.FindGameObjectWithTag("Giocatore").SetActive(false);
+        // endText.text = "Hai vinto!";
+        // GameObject.FindGameObjectWithTag("Giocatore").SetActive(false);
+
+        if (livelloScenaCorrente < numMaxLivelliScena)
+        {
+            livelloScenaCorrente++;
+            SceneManager.LoadScene("livello1");
+        }
+        else
+            endText.text = "Hai vinto!";
     }
 }
