@@ -18,9 +18,14 @@ public class EnemyCylinder : MonoBehaviour {
     void FixedUpdate()
     {
 
-        transform.LookAt(target);
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
+        float distance = Vector3.Distance(transform.position, target.position);
+
+        if (distance < 14)
+        {
+            transform.LookAt(target);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+        }
 
     // Update is called once per frame
     void Update()
