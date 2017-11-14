@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 	public float jumpIntensity = 0;
     private bool isOnGround = true;
     public int health = 3;
+    private ParticleSystem playerCollisionParticles;
 	private GameController gameController; //variabile che utilizzo per verifiche incrociate coi dati di gioco 
     private Rigidbody rb; //variabile che definisce le proprietà di corpo rigido 
 	public Renderer rend;
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 		rend.material.SetColor ("_Color",Color.blue); //Si usa color perchè RGBA è compreso tra 0 e 1
 		rb = GetComponent<Rigidbody>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-
+        playerCollisionParticles = GameObject.FindGameObjectWithTag("PlayerCollisionSparks").GetComponent<ParticleSystem>();
 
     }
 
@@ -66,6 +67,9 @@ public class PlayerController : MonoBehaviour {
         // Se collide col terreno può saltare
         if (other.gameObject.CompareTag("Ground"))
             isOnGround = true;
+
+        playerCollisionParticles.transform.position = other.contacts[0].point;
+        playerCollisionParticles.Play();
     }
 
 	public void OnCollisionExit(Collision other)
