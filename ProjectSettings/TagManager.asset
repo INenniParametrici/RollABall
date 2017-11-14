@@ -10,6 +10,7 @@ TagManager:
   - BottomPlane
   - Enemy
   - PlayerCollisionSparks
+  - Enemy2
   layers:
   - Default
   - TransparentFX
