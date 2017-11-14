@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour {
 
     }
 
+    public bool getIsOnGround()
+    {
+        return isOnGround;
+    }
+
     // Update is called once per frame
     void FixedUpdate () {
 		float jump = Input.GetAxis ("Jump");

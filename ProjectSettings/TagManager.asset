@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - PlayerCollisionSparks
   - Enemy2
+  - cilinderEnemey
   layers:
   - Default
   - TransparentFX
