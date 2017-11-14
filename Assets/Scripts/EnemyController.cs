@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyController : MonoBehaviour {
 
 	//public permette modifiche al programmatore dall ide unity
-	public float speed = 20;            // variabile per applicare velocità alla fisica
+	public float speed = 5;            // variabile per applicare velocità alla fisica
     public Transform target;  // variabile per far inseguire al enemy il target puntato
 
 	// Use this for initialization call one a time

@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
         rb.AddForce(movement*speed);        //prodotto scalare movement * speed
 
 		//cambia colore in base al numero di cubi raccolti
-		if (gameController.getScore () >= 2) {
+		if (gameController.getScore () >= 4) {
 			rend.material.SetColor("_Color", Color.yellow);//i colori devono avere la stessa stringa come tag
 			if (isSpeedMultiplied == false) {
 				this.speed = this.speed * 2;
@@ -58,6 +58,8 @@ public class PlayerController : MonoBehaviour {
         //Collisione col nemico
         if (other.gameObject.CompareTag("Enemy"))
            this.gameController.LoseLife();
+        if (other.gameObject.CompareTag("Enemy2"))
+            this.gameController.LoseLife();
 
         //Collisione con il fondo della mappa
         if (other.gameObject.CompareTag("BottomPlane"))

@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
     public void incrementScore()
     {
         this.score++;
-        if (this.score == 4) this.WinGame();
+        if (this.score == 8) this.WinGame();
     }
 
     public void LoseLife()
