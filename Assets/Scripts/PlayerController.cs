@@ -86,7 +86,10 @@ public class PlayerController : MonoBehaviour {
 		//Se collide con il disattivatore di gravità
 		//si può salire nel tunnel verso l'alto 
 		if (other.gameObject.CompareTag ("GravityInverter")) {
-			rb.useGravity = false;
+			//rb.useGravity = false;
+			rb.AddForce(new Vector3 (0.0f, 60.0f, 0.0f));
+
+
 			//Bisogna aggiungere una forza verso l'alto qui per velocizzare la salita
 			//meglio usare una forza esplosiva per non doverla rimuovere quando si esce col collider
 			Debug.Log ("CI SIAMO");
@@ -97,7 +100,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (other.gameObject.CompareTag ("GravityEneabler")) {
 			rb.useGravity = true;
-
+			jumpIntensity = 1; 
 			Debug.Log ("CI SIAMO");
 		}
 
