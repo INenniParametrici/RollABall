@@ -35,10 +35,18 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate () {
 		float jump = Input.GetAxis ("Jump");
 
-		if (isOnGround) {
+		if (isOnGround && rb.useGravity == true) {
 			Vector3 jumpVector = new Vector3 (0.0f, jump, 0.0f);
 			rb.AddForce (jumpVector * jumpIntensity, ForceMode.Impulse);
 		}
+
+		if (isOnGround && rb.useGravity == false) {
+			Vector3 jumpVector = new Vector3 (0.0f, jump, 0.0f);
+			jumpIntensity = 10;
+			rb.AddForce (jumpVector * jumpIntensity, ForceMode.Impulse);
+		}
+		
+		
 
         float movementHorizontal = Input.GetAxis("Horizontal"); //da -1 a 1  ( da tastiera -1 sinistra, 1 destra)
         float movementVertical = Input.GetAxis("Vertical");     //da -1 a 1 ( da tastiera : -1 giù , 1 su )
@@ -74,6 +82,25 @@ public class PlayerController : MonoBehaviour {
         // Se collide col terreno può saltare
         if (other.gameObject.CompareTag("Ground"))
             isOnGround = true;
+
+		//Se collide con il disattivatore di gravità
+		//si può salire nel tunnel verso l'alto 
+		if (other.gameObject.CompareTag ("GravityInverter")) {
+			rb.useGravity = false;
+			//Bisogna aggiungere una forza verso l'alto qui per velocizzare la salita
+			//meglio usare una forza esplosiva per non doverla rimuovere quando si esce col collider
+			Debug.Log ("CI SIAMO");
+		}
+
+		//Se collide con l'attivatore di gravità
+		//si può salire nel tunnel verso l'alto 
+
+		if (other.gameObject.CompareTag ("GravityEneabler")) {
+			rb.useGravity = true;
+
+			Debug.Log ("CI SIAMO");
+		}
+
 
         playerCollisionParticles.transform.position = other.contacts[0].point;
         playerCollisionParticles.Play();
